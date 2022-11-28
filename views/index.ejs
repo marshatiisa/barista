@@ -1,0 +1,67 @@
+<%- include('partials/header') -%>
+
+<main class="container">
+    <div class="row justify-content-around mt-5">
+        <a href="/login" class="col-3 btn btn-primary"> Login</a>
+        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+    </div>
+</main>
+<div class="mt-5">
+      <form action="/order" method="POST">
+
+    <h2>Enter customer name</h2>
+    <input type="text" id="customerName" required>
+
+    <h2>Order selection</h2>
+    <input type="radio" name="order" id="cap" required>
+    <label for="">Cappucino</label>
+    <input type="radio" name="order" id="latte" required>
+    <label for="">Latte</label>
+    <input type="radio" name="order" id="frap" required>
+    <label for="">Frappucino</label>
+    <input type="radio" name="order" id="mocha" required>
+    <label for="">Mocha</label>
+    <input type="radio" name="order" id="tea" required>
+    <label for="">Tea</label>
+    <input type="radio" name="order" id="chocolate" required>
+    <label for="">Hot Chocolate</label>
+
+    <h2>Milk Selection</h2>
+    <input type="radio" name="milk" id="oat" required>
+    <label for="">Oat milk</label>
+    <input type="radio" name="milk" id="cow" required>
+    <label for="">2% milk</label>
+    <input type="radio" name="milk" id="almond" required>
+    <label for="">Almond</label>
+
+    <h2>Hot or cold option</h2>
+    <input type="radio" name="temp" id="hot" required>
+    <label for="">Hot</label>
+    <input type="radio" name="temp" id="iced" required>
+    <label for="">Iced</label>
+
+    <h2>Topping selection</h2>
+    <input type="radio" name="topping" id="none" required>
+    <label for="">None</label>
+    <input type="radio" name="topping" id="caramel" required>
+    <label for="">Caramel</label>
+    <input type="radio" name="topping" id="hazelnut" required>
+    <label for="">Hazelnut</label>
+    <input type="radio" name="topping" id="vanilla" required>
+    <label for="">Vanilla</label>
+    <input type="radio" name="topping" id="cream" required>
+    <label for="">Whipping cream</label>
+
+    <h3>Size selection </h3>
+    <label for="size">Choose dink size</label>
+      <select id="size">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Click to enter the order</button>
+    </form>
+  </div>
+    
+
+<%- include('partials/footer') -%>

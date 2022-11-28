@@ -1,0 +1,66 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <section>
+            
+          </section>
+          <div class="container">
+            <div class="row justify-content-center mt-5">
+              <div class="col-6">
+                <div class="pending">
+                  <h2>Pending Orders</h2>
+                    
+                    <ul class="orders">
+                      <% for(let i=0; i< orders.length; i++) {%> 
+                      <section id="<%=orders[i]._id%>">
+                      <li class="orders">
+                        <span><%= orders[i].name%></span>
+                        <span><%= orders[i].size %></span>
+                        <span><%= orders[i].order %></span>
+                        <span><%= orders[i].status %></span>
+                        <% if(orders[i].status !== 'is ready for pick-up'){%>
+                        <span><i class="fas fa-mug-hot" aria-hidden="true"></i></span>
+                        <% } %>
+                      </li>
+                      <% } %>
+                      </section>
+                    </ul>
+                  </div>
+                </div>
+            
+                <div class="completed">
+                  <h2>Completed Orders</h2>
+                  <span>Clear Past Orders<i class="fa fa-trash" aria-hidden="true"></i></span><br>
+                  <% for (let i = 0; i < completed.length; i++) {%>
+                    <section id="<%=completed[i]._id%>">
+                      <section class="allSet">
+                      <span id="number">Order #<%=i+1%></span>
+                      <h3 class="whocompleted"><%=completed[i].userName%> completed: <%=completed[i].name%>'s order</h3>
+                      <span><%=completed[i].name%></span>
+                      <span><%=completed[i].size%></span>
+                      <span><%=completed[i].order%></span>
+                      <span><%=completed[i].status%></span>
+                      <span>| (<%=completed[i].barista%>)</span>
+                      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </section>
+                  </section>
+                  <%}%>
+                </div>
+              </div>
+              <div class="sayMyName">
+          
+              </div>
+      </div>
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  
+    </div>
+  
+<%- include('partials/footer') -%>
